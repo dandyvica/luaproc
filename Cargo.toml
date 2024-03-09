@@ -1,0 +1,24 @@
+[package]
+name = "luaproc"
+version = "0.1.0"
+edition = "2021"
+authors = ["Alain Viguier <dandyvica@gmail.com>"]
+categories = ["development-tools::procedural-macro-helpers"]
+description = "Build derive procedural macros in Lua"
+documentation = "https://docs.rs/luaproc"
+keywords = ["macros", "lua"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/dandyvica/luaproc"
+rust-version = "1.71"
+readme = "README.md"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+mlua = { version = "0.9.4", features = [ "lua54", "serialize" ] }
+proc-macro2 = "1.0.69"
+quote = "1.0.33"
+serde = { version = "1.0.195", features = [ "derive" ] }
+serde_json = "1.0.111"
+syn = { version = "2.0.39", features = ["full", "extra-traits", "parsing"] }
